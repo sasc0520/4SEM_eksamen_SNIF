@@ -3,18 +3,21 @@
         "title": "Bliv agent med agent SNIF",
         "image": "img/1.png",
         "id": 1,
-        "link": ""
+        "link": "https://www.snifagent.dk/agentmedsnif",
+        "credits": "Ahjay Stelino"
     },
     {
         "title": "Snifs Store Energijagt",
         "image": "img/1.png",
         "id": 2,
-        "link": ""
+        "link": "",
+        "credits": "Ahjay Stelino"
     },
     {
         "title": "Snif",
         "image": "img/1.png",
         "id": 3,
-        "link": ""
+        "link": "https://www.snifagent.dk/snifskrab",
+        "credits": "Ahjay Stelino"
     }
 ]

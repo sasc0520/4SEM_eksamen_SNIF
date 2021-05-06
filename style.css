@@ -1,12 +1,12 @@
-* {
-  box-sizing: border-box;
-}
-
 :root {
   --orange: #fbba23;
   --green: #76b729;
   --grey: #585757;
   --blue: #92d2e0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -18,11 +18,19 @@ header {
   position: fixed;
 }
 
+iframe {
+  background-color: #ffffff;
+}
+
 img {
   width: 100%;
 }
 
 .logo {
+  width: 70px;
+}
+
+.backbutton {
   width: 70px;
 }
 
@@ -38,12 +46,18 @@ button {
   cursor: pointer;
 }
 
-a {
-  text-decoration: none;
+.blue_button {
+  background-color: var(--blue);
 }
 
-.blue {
-  background-color: var(--blue);
+/***************************************text****************************************/
+
+.game {
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
 }
 
 #container {
@@ -83,6 +97,27 @@ main {
   justify-content: center;
 }
 
+.single_container {
+  display: grid;
+  grid-template-columns: 70%;
+  justify-content: center;
+  height: 100vh;
+}
+
+.iframe_container {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  height: 144%;
+  align-items: center;
+}
+
+.credits_container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 @media screen and (min-width: 939px) {
   .main_container {
     display: flex;
@@ -101,6 +136,7 @@ main {
   }
   .snif_container {
     display: flex;
+    width: 40%;
   }
   .spil_container {
     width: 70%;
@@ -118,5 +154,12 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 15px;
+  }
+  #spil {
+    background-image: url("img/baggrund-1920.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
   }
 }
