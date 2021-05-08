@@ -7,6 +7,12 @@ const id = urlParams.get("id");
 function init() {
     const games = "spil.json";
     const array = [];
+    const mediaQuery = window.matchMedia('(min-width: 939px)');
+    if (mediaQuery.matches) {
+        document.querySelector("body").style.overflow = "visible";
+    } else {
+        document.querySelector("body").style.overflow = "hidden";
+    }
     fetchGames(games, array);
 }
 
