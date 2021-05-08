@@ -21,7 +21,7 @@ function displayGames(array) {
         clone.querySelector(".title").textContent = game.title;
         clone.querySelector("img").src = game.image;
 
-        clone.querySelector(".game").addEventListener("click", () => {
+        clone.querySelector(".thumbnail").addEventListener("click", () => {
             location.href = `single.html?id=${game.id}`;
           });
 

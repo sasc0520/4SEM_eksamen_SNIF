@@ -1,0 +1,196 @@
+:root {
+  --orange: #fbba23;
+  --other-orange: #f07f31;
+  --green: #76b729;
+  --grey: #585757;
+  --blue: #92d2e0;
+  --black: #231f20;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+}
+
+.single_header {
+  position: relative;
+}
+
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+img {
+  width: 100%;
+}
+
+.logo {
+  width: 75px;
+}
+
+.thumbnail {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.backbutton {
+  align-self: center;
+}
+
+.backbutton img {
+  width: 70px;
+}
+
+/***************************************text****************************************/
+
+@font-face {
+  font-family: "Meltow";
+  src: url("fonts/typesketchbook_-_meltow-marker-webfont.woff2") format("woff2"), url("fonts/typesketchbook_-_meltow-marker-webfont.woff") format("woff");
+}
+
+h1 {
+  font-family: "Meltow";
+  font-size: 2.5rem;
+  letter-spacing: 0.15rem;
+  font-weight: 100;
+  color: #ffffff;
+}
+
+h2 {
+  font-family: "Meltow";
+  font-size: 1.25rem;
+  letter-spacing: 0.15rem;
+  font-weight: 100;
+  color: #ffffff;
+}
+
+p {
+  font-family: "Myriad Pro", "Segoe UI";
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+/***********************************************spil-side**************************************************/
+
+.main_spil_container {
+  height: 100vh;
+}
+
+.spil_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 70%;
+  justify-content: center;
+}
+
+article {
+  text-align: start;
+}
+
+body {
+  width: 100%;
+  background-image: linear-gradient(-45deg, var(--other-orange) 50%, var(--orange) 50%);
+  background-color: var(--other-orange);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*********************************************single-view*******************************************************/
+
+.single_container {
+  display: grid;
+  grid-template-columns: 80%;
+  justify-content: center;
+  height: 100vh;
+}
+
+.iframe_container {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  height: 144%;
+}
+
+.credits_container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/*******************************************media-queries*****************************************************/
+@media screen and (min-width: 639px) {
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+/*****Desktop*****/
+@media screen and (min-width: 939px) {
+  .main_spil_container {
+    display: flex;
+    align-items: center;
+  }
+  .snif_container {
+    display: flex;
+    width: 40%;
+  }
+  .spil_container {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    text-align: center;
+    margin: 15px;
+  }
+  .test {
+    display: flex;
+    justify-content: flex-end;
+  }
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 15px;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+  .iframe_container {
+    align-items: center;
+  }
+  body {
+    background-color: var(--orange);
+    background-image: url("img/baggrund-1920.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
+}

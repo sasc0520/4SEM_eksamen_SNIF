@@ -1,8 +1,10 @@
 :root {
   --orange: #fbba23;
+  --other-orange: #f07f31;
   --green: #76b729;
   --grey: #585757;
   --blue: #92d2e0;
+  --black: #231f20;
 }
 
 * {
@@ -16,9 +18,16 @@ body {
 
 header {
   position: fixed;
+  padding: 10px;
+}
+
+.single_header {
+  position: relative;
 }
 
 iframe {
+  width: 100%;
+  height: 280px;
   background-color: #ffffff;
 }
 
@@ -27,21 +36,34 @@ img {
 }
 
 .logo {
-  width: 70px;
+  width: 75px;
 }
 
-.backbutton {
+.thumbnail {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.backbutton img {
   width: 70px;
 }
 
 button {
   display: block;
   border: none;
-  padding: 20px 150px;
+  padding: 20px 80px;
   border-radius: 10px;
   width: 100%;
   background-color: var(--green);
+
   text-align: center;
+  color: #ffffff;
+  font-family: "Meltow";
+  font-size: 1.25rem;
+  letter-spacing: 0.15rem;
+  font-weight: 100;
+  white-space: nowrap;
+  box-shadow: 7px 8px rgba(88, 87, 87, 0.8);
   color: #ffffff;
   cursor: pointer;
 }
@@ -50,14 +72,46 @@ button {
   background-color: var(--blue);
 }
 
+.blue_button:hover {
+  transition: 0.5s;
+  background-color: #aee4fa;
+}
+
+button:hover {
+  transition: 0.5s;
+  background-color: #bdd863;
+}
+
+.blue_button:active,
+button:active {
+  transition: 0.2s;
+  transform: translateY(7px);
+  box-shadow: 6px 4px rgba(88, 87, 87, 0.8);
+}
+
 /***************************************text****************************************/
 
-.game {
-  border-radius: 10px;
+@font-face {
+  font-family: "Meltow";
+  src: url("fonts/typesketchbook_-_meltow-marker-webfont.woff2") format("woff2"), url("fonts/typesketchbook_-_meltow-marker-webfont.woff") format("woff");
+}
+
+h1 {
+  font-family: "Meltow";
+  font-size: 2.5rem;
+  letter-spacing: 0.15rem;
+  font-weight: 100;
+  color: var(--black);
 }
 
 a {
   text-decoration: none;
+}
+
+/**********************************************landing-page*************************************************/
+
+.boern {
+  background-color: var(--orange);
 }
 
 #container {
@@ -76,48 +130,20 @@ a {
   align-self: center;
 }
 
-.boern {
-  background-color: var(--orange);
+/*******************************************media-queries*****************************************************/
+@media screen and (min-width: 639px) {
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
 }
-
-.main_spil_container {
-  height: 100vh;
+/*****Tablets*****/
+@media screen and (max-width: 768px) {
+  /* body {
+    background-color: var(--orange);
+  } */
 }
-
-.spil_container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-}
-
-main {
-  display: grid;
-  grid-template-columns: 70%;
-  justify-content: center;
-}
-
-.single_container {
-  display: grid;
-  grid-template-columns: 70%;
-  justify-content: center;
-  height: 100vh;
-}
-
-.iframe_container {
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-  height: 144%;
-  align-items: center;
-}
-
-.credits_container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
+/*****Desktop*****/
 @media screen and (min-width: 939px) {
   .main_container {
     display: flex;
@@ -144,7 +170,7 @@ main {
     flex-wrap: wrap;
     justify-content: end;
     text-align: center;
-    margin: 50px;
+    margin: 15px;
   }
   .test {
     display: flex;
@@ -155,11 +181,21 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 15px;
   }
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+  .iframe_container {
+    align-items: center;
+  }
+  button {
+    padding: 20px 130px;
+  }
   #spil {
-    background-image: url("img/baggrund-1920.png");
+    background-color: var(--orange);
+    /* background-image: url("img/baggrund-1920.png");
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
-    overflow: hidden;
+    min-height: 100vh; */
   }
 }
