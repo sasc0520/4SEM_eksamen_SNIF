@@ -1,16 +1,3 @@
-:root {
-  --orange: #fbba23;
-  --other-orange: #f07f31;
-  --green: #76b729;
-  --grey: #585757;
-  --blue: #92d2e0;
-  --black: #231f20;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0 auto;
   padding: 0;
@@ -36,14 +23,6 @@ iframe {
   height: 100%;
 }
 
-img {
-  width: 100%;
-}
-
-.logo {
-  width: 75px;
-}
-
 .thumbnail {
   border-radius: 10px;
   cursor: pointer;
@@ -58,14 +37,7 @@ img {
 }
 
 /***************************************text****************************************/
-
-@font-face {
-  font-family: "Meltow";
-  src: url("fonts/typesketchbook_-_meltow-marker-webfont.woff2") format("woff2"), url("fonts/typesketchbook_-_meltow-marker-webfont.woff") format("woff");
-}
-
 h1 {
-  font-family: "Meltow";
   font-size: 2.5rem;
   letter-spacing: 0.15rem;
   font-weight: 100;
@@ -73,7 +45,6 @@ h1 {
 }
 
 h2 {
-  font-family: "Meltow";
   font-size: 1.25rem;
   letter-spacing: 0.15rem;
   font-weight: 100;
@@ -81,14 +52,9 @@ h2 {
 }
 
 p {
-  font-family: "Myriad Pro", "Segoe UI";
   font-size: 1rem;
   font-weight: 400;
   color: #ffffff;
-}
-
-a {
-  text-decoration: none;
 }
 
 /***********************************************spil-side**************************************************/
@@ -202,7 +168,7 @@ body {
   }
   body {
     background-color: var(--orange);
-    background-image: url("img/baggrund-1920.png");
+    background-image: url("../img/baggrund-1920.png");
     background-repeat: no-repeat;
     background-size: cover;
   }

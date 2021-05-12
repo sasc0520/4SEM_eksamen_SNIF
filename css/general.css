@@ -1,0 +1,80 @@
+:root {
+  --orange: #fbba23;
+  --other-orange: #f07f31;
+  --green: #76b729;
+  --grey: #585757;
+  --blue: #92d2e0;
+  --black: #231f20;
+}
+
+@font-face {
+  font-family: "Meltow";
+  src: url("../fonts/typesketchbook_-_meltow-marker-webfont.woff2") format("woff2"), url("../fonts/typesketchbook_-_meltow-marker-webfont.woff") format("woff");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+.logo {
+  width: 67px;
+}
+
+h1,
+h2 {
+  font-family: "Meltow";
+}
+
+p,
+a {
+  font-family: "Myriad Pro", "Segoe UI";
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  display: block;
+  border: none;
+  padding: 20px 80px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: var(--green);
+
+  text-align: center;
+  color: #ffffff;
+  font-family: "Meltow";
+  font-size: 1.25rem;
+  letter-spacing: 0.15rem;
+  font-weight: 100;
+  white-space: nowrap;
+  box-shadow: 7px 8px rgba(88, 87, 87, 0.8);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.blue_button {
+  background-color: var(--blue);
+}
+
+.blue_button:hover {
+  transition: 0.5s;
+  background-color: #aee4fa;
+}
+
+button:hover {
+  transition: 0.5s;
+  background-color: #bdd863;
+}
+
+.blue_button:active,
+button:active {
+  transition: 0.2s;
+  transform: translateY(7px);
+  box-shadow: 6px 4px rgba(88, 87, 87, 0.8);
+}

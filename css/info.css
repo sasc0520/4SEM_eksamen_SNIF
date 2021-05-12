@@ -1,0 +1,47 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  padding: 10px;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav_scrolled {
+  color: #ffffff;
+  background-color: var(--green);
+  transition: 0.5s;
+}
+
+.nav_scrolled a {
+  color: #ffffff;
+}
+
+main {
+  height: 500vh;
+}
+
+footer {
+  display: flex;
+  background-color: var(--green);
+}
+
+.om_text {
+  color: red;
+}
