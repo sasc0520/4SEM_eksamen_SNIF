@@ -1,5 +1,5 @@
 .float {
-  animation: float 2s infinite ease-in-out;
+  animation: float 3s infinite ease-in-out;
 }
 
 @keyframes float {
@@ -11,5 +11,18 @@
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+.wiggle {
+  animation: wiggle 2.5s both;
+  animation-iteration-count: infinite;
+  transform: rotate(2deg);
+  transform-origin: 50% 50%;
+}
+
+@keyframes wiggle {
+  50% {
+    transform: rotate(-2deg);
   }
 }
