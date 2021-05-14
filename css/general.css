@@ -3,6 +3,7 @@
   --other-orange: #f07f31;
   --green: #76b729;
   --grey: #585757;
+  --light-grey: #eeeeee;
   --blue: #92d2e0;
   --black: #231f20;
 }
@@ -30,8 +31,13 @@ h2 {
 }
 
 p,
-a {
+a,
+h3 {
   font-family: "Myriad Pro", "Segoe UI";
+}
+
+p {
+  line-height: 30px;
 }
 
 a {
