@@ -31,4 +31,19 @@ async function getSnif() {
     document.querySelector(".snif_text_left p").textContent = snifPod.tekst_venstre;
     document.querySelector(".snif_text_right p").textContent = snifPod.tekst_hjre;
     document.querySelector(".snif_img_container img").src = snifPod.billede.guid;
+    getProcess();
+}
+
+async function getProcess() {
+    const response = await fetch(endpoint + "forlbet/62");
+    let procPod = await response.json();    
+    document.querySelector("#forloebet h1").textContent = procPod.overskrift;
+    getTestimonials();
+}
+
+async function getTestimonials() {
+    const response = await fetch(endpoint + "kundeudtalelser/81");
+    let testPod = await response.json();    
+    document.querySelector("#kundeudtalelser h1").textContent = testPod.overskrift;
+    document.querySelector(".test_text_container h3").textContent = testPod.manchette;
 }
