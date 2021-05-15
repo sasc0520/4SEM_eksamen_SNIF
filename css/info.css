@@ -5,32 +5,101 @@ body {
 
 header {
   position: fixed;
-  padding: 10px;
   width: 100%;
 }
 
 nav {
   display: flex;
+  width: 100%;
+  margin: 0;
 }
 
 nav a {
   text-decoration: none;
   color: var(--black);
+  margin: 10px 10px;
 }
 
-ul {
-  display: flex;
-  list-style: none;
+nav a:hover {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 10px 10px;
+  transition: 0.5s;
 }
 
 .nav_scrolled {
-  color: #ffffff;
   background-color: var(--green);
   transition: 0.5s;
 }
 
-.nav_scrolled a {
-  color: #ffffff;
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.desktop_nav {
+  display: none;
+}
+
+.menu_items {
+  display: none;
+  position: absolute;
+  right: 0vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: var(--green);
+  padding: 20px;
+}
+
+.menu_btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  z-index: 10;
+}
+
+.menu_btn_burger {
+  width: 40px;
+  height: 4px;
+  background-color: var(--black);
+  border-radius: 70px;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu_btn_burger::before,
+.menu_btn_burger::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: var(--black);
+  border-radius: 70px;
+  transition: all 0.5s ease-in-out;
+}
+.menu_btn_burger::before {
+  transform: translateY(-16px);
+}
+.menu_btn_burger::after {
+  transform: translateY(16px);
+}
+.menu_btn.open .menu_btn_burger {
+  transform: translateX(-50px);
+  background: transparent;
+}
+.menu_btn.open .menu_btn_burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu_btn.open .menu_btn_burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
 }
 
 main {
@@ -95,5 +164,17 @@ section {
   .snif_text_left,
   .snif_text_right {
     padding: 25px 80px 80px;
+  }
+  .desktop_nav {
+    display: flex;
+    padding: 20px;
+  }
+  nav {
+    justify-content: space-between;
+  }
+  .menu_btn,
+  .container,
+  .menu_items {
+    display: none;
   }
 }
