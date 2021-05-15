@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -130,6 +131,18 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.totop_button_container {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  position: -webkit-sticky;
+  bottom: 2vh;
+}
+
+.topknap {
+  width: 60px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1080px) {

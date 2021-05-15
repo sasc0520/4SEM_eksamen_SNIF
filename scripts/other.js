@@ -14,6 +14,7 @@ function changeNavBar() {
     } else {
         navBar.classList.remove("nav_scrolled");
     }
+    scrollToTop();
 }
 
 function openCloseMenu() {
@@ -48,5 +49,23 @@ function openCloseMenu() {
                 menuOpen = false;
             }
         })
+    }
+}
+
+function scrollToTop() {
+    let toTopButton = document.querySelector(".totop_button");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        toTopButton.style.display = "block";
+        toTopButton.addEventListener("click", topFunction);
+    } else {
+        toTopButton.style.display = "none";
+        toTopButton.removeEventListener("click", topFunction);
+    }
+    function topFunction(e) {
+        e.preventDefault();
+        scroll({
+          top: 0,
+          behavior: "smooth"
+        });
     }
 }
