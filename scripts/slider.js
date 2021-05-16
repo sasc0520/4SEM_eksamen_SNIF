@@ -1,23 +1,58 @@
-document.addEventListener("DOMContentLoaded", () => {
-    getTestimonialsItem();
+"use strict";
+window.addEventListener("DOMContentLoaded", () => {
+    var slides = document.querySelectorAll('.testimonial_item'),
+    button = document.querySelectorAll('.icon_container'),
+    carouselCount = 0,
+    scrollInterval,
+    interval = 5000;
+
+button[0].addEventListener('click', function (e) {
+   e = e || window.event;
+   e.preventDefault();
+   carouselCount -= 100;
+   slider();
+   if (e.type !== 'autoClick') {
+       clearInterval(scrollInterval);
+       scrollInterval = setInterval(autoScroll, interval);
+   }
 });
+button[1].addEventListener('click', sliderEvent);
+button[1].addEventListener('autoClick', sliderEvent);
 
-async function getTestimonialsItem() {
-    const response = await fetch(endpoint + "udtalelse");
-    let testimonials = await response.json(); 
-    displayTestimonials(testimonials);   
+function sliderEvent(e) {
+   e = e || window.event;
+   e.preventDefault();
+   carouselCount += 100;
+   slider();
+   if (e.type !== "autoClick") {
+       clearInterval(scrollInterval);
+       scrollInterval = setInterval(autoScroll, interval);
+   }
 }
 
-function displayTestimonials(testimonials){
-    let testContainer = document.querySelector("#testimonial_clone");
-    let testTemplate = document.querySelector("#kundeudtalelser template");
-    testContainer.textContent = "";
-    testimonials.forEach(testimonial => {
-        let clone = testTemplate.cloneNode(true).content;
-        clone.querySelector(".quote").textContent = testimonial.udtalelse;
-        clone.querySelector(".author_image_container img").src = testimonial.billede.guid;
-        clone.querySelector(".title").textContent = testimonial.titel;
-        clone.querySelector(".name").textContent = testimonial.navn;
-        testContainer.appendChild(clone);
-    });
+function slider() {
+   switch (carouselCount) {
+       case -100:
+           carouselCount = 0;
+           break;
+       case 300:
+           carouselCount = 0;
+           break;
+       default:
+           break;
+   }
+   console.log(carouselCount);
+   for (var i = 0; i < slides.length; i += 1) {
+       slides[i].setAttribute('style', 'transform:translateX(-' + carouselCount + '%)');
+   }
 }
+
+// create new Event to dispatch click for auto scroll
+var autoClick = new Event('autoClick');
+function autoScroll() {
+   button[1].dispatchEvent(autoClick);
+}
+
+// set timing of dispatch click events
+scrollInterval = setInterval(autoScroll, interval);
+});
