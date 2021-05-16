@@ -36,9 +36,36 @@ async function getSnif() {
 
 async function getProcess() {
     const response = await fetch(endpoint + "forlbet/62");
-    let procPod = await response.json();    
+    let procPod = await response.json();
     document.querySelector("#forloebet h1").textContent = procPod.overskrift;
+    document.querySelector("#forloebet .manchette").textContent = procPod.manchette;
+    document.querySelector(".first_text_container p").textContent = procPod.tekst;
+    getSteps();
+}
+
+async function getSteps() {
+    const response = await fetch(endpoint + "trin");
+    let stepsPods = await response.json();
+    displaySteps(stepsPods);
     getTestimonials();
+}
+
+function displaySteps(stepsPods) {
+    let stepContainer = document.querySelector("#clone_container");
+    let stepTemplate = document.querySelector("template");
+    stepContainer.textContent = "";
+    stepsPods.forEach(step => {
+        let clone = stepTemplate.cloneNode(true).content;
+        clone.querySelector(".step_number").textContent = step.nummer;
+        clone.querySelector(".step_image_container img").src = step.billede.guid;
+        clone.querySelector(".step_text").textContent = step.tekst;
+        if (step.venstre_eller_hjre === "0") {
+            clone.querySelector("#step_container").classList.add(".right");
+        } else if (step.venstre_eller_hjre === "1") {
+            clone.querySelector("#step_container").classList.add(".left");
+        }
+        stepContainer.appendChild(clone);
+    });
 }
 
 async function getTestimonials() {
@@ -46,4 +73,16 @@ async function getTestimonials() {
     let testPod = await response.json();    
     document.querySelector("#kundeudtalelser h1").textContent = testPod.overskrift;
     document.querySelector(".test_text_container h3").textContent = testPod.manchette;
+    getContact();
+}
+
+async function getContact() {
+    const response = await fetch(endpoint + "kontakt/100");
+    let contactPod = await response.json();
+    document.querySelector("#kontakt h1").textContent = contactPod.overskrift;
+    document.querySelector("#kontakt h3").textContent = contactPod.manchette;
+    document.querySelector(".contact_img_container img").src = contactPod.logo.guid;
+    document.querySelector(".adress").textContent = contactPod.adresse;
+    document.querySelector(".email").textContent = contactPod.mail;
+    document.querySelector(".phone").textContent = contactPod.telefon;
 }
