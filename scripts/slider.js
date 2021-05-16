@@ -15,7 +15,11 @@ function displayTestimonials(testimonials){
     testimonials.forEach(testimonial => {
         let clone = testTemplate.cloneNode(true).content;
         clone.querySelector(".quote").textContent = testimonial.udtalelse;
-        clone.querySelector(".author_image_container img").src = testimonial.billede.guid;
+        if(testimonial.billede === false) {
+            clone.querySelector(".author_image_container img").src = "img/anon.png";
+        } else {
+            clone.querySelector(".author_image_container img").src = testimonial.billede.guid;
+        }
         clone.querySelector(".title").textContent = testimonial.titel;
         clone.querySelector(".name").textContent = testimonial.navn;
         testContainer.appendChild(clone);
