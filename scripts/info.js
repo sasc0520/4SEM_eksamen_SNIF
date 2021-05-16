@@ -1,10 +1,8 @@
 "use strict";
 const endpoint = "https://snifagent.dk/wordpress/wp-json/wp/v2/";
-
 document.addEventListener("DOMContentLoaded", () => {
     getSplash();
 });
-
 
 async function getSplash() {
     const response = await fetch(endpoint + "splash/29");
