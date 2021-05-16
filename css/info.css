@@ -145,6 +145,18 @@ section {
   cursor: pointer;
 }
 
+#step_container {
+  display: flex;
+}
+
+.left {
+  background-color: aqua;
+}
+
+.right {
+  background-color: chocolate;
+}
+
 @media screen and (min-width: 1080px) {
   .about_img_container {
     display: flex;
