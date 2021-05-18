@@ -1,7 +1,6 @@
 body {
   margin: 0 auto;
   padding: 0;
-  scroll-behavior: smooth;
 }
 
 header {
@@ -101,10 +100,6 @@ nav a:hover {
 }
 .menu_btn.open .menu_btn_burger::after {
   transform: rotate(-45deg) translate(35px, 35px);
-}
-
-main {
-  height: 500vh;
 }
 
 footer {
