@@ -26,6 +26,7 @@ async function getSnif() {
     const response = await fetch(endpoint + "om_snif/23");
     let snifPod = await response.json();    
     document.querySelector("#snif h1").textContent = snifPod.overskrift;
+    document.querySelector("#snif h3").textContent = snifPod.manchette;
     document.querySelector(".snif_text_left p").textContent = snifPod.tekst_venstre;
     document.querySelector(".snif_text_right p").textContent = snifPod.tekst_hjre;
     document.querySelector(".snif_img_container img").src = snifPod.billede.guid;
@@ -58,9 +59,9 @@ function displaySteps(stepsPods) {
         clone.querySelector(".step_image_container img").src = step.billede.guid;
         clone.querySelector(".step_text").textContent = step.tekst;
         if (step.venstre_eller_hjre === "0") {
-            clone.querySelector("#step_container").classList.add(".right");
+            clone.querySelector("#step_container").classList.add("right");
         } else if (step.venstre_eller_hjre === "1") {
-            clone.querySelector("#step_container").classList.add(".left");
+            clone.querySelector("#step_container").classList.add("left");
         }
         stepContainer.appendChild(clone);
     });

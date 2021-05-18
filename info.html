@@ -50,9 +50,9 @@
                 <div class="about_text_container">
                     <h3></h3>
                     <p></p>
-                    <div class="btn_container">
-                        <a href="info.html">
-                            <button>Se Kundeudtalelser</button>
+                    <div id="about_button" class="btn_container">
+                        <a href="#kundeudtalelser">
+                            <button class="info_button">Se Kundeudtalelser</button>
                         </a>
                     </div>
                 </div>
@@ -60,6 +60,7 @@
         </section>
         <section id="snif" class="grey">
             <h1></h1>
+            <h3></h3>
             <div class="snif_container">
                 <div class="snif_text_container">
                     <div class="snif_text_left">
@@ -76,10 +77,10 @@
             </div>
         </section>
         <section id="forloebet">
-            <h1></h1>
+            <h1 class="title"></h1>
+            <h3 class="manchette"></h3>
             <div class="forloeb_container">
                 <div class="content_container">
-                    <h3 class="manchette"></h3>
                     <div class="first_text_container">
                         <p></p>
                     </div>
@@ -101,12 +102,14 @@
                         </div>
                     </article>
                 </template>
-            <h3>Interesseret?</h3>
-            <div class="btn_container">
-                <a href="info.html">
-                    <button>Se Kundeudtalelser</button>
-                </a>
-            </div>
+                <div class="interested_container">
+                    <h3>Interesseret?</h3>
+                    <div id="steps_button" class="btn_container">
+                        <a href="info.html">
+                            <button class="info_button">Se Kundeudtalelser</button>
+                        </a>
+                    </div>
+                </div>
         </section>
         <section id="kundeudtalelser" class="grey">
             <h1></h1>
@@ -188,7 +191,7 @@
     </div>
     <footer>
         <div class="kontakt_info">
-            <h1>Kontakt os</h1>
+            <!-- <h1>Kontakt os</h1> -->
         </div>
     </footer>
     <script src="scripts/info.js"></script>
