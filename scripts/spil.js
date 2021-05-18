@@ -1,5 +1,16 @@
 "use strict";
-window.addEventListener("load", init);
+window.addEventListener("load", () => {
+    init();
+
+    let snifAnimation = bodymovin.loadAnimation({
+        container: document.querySelector(".snif_container"),
+        renderer: "svg",
+        loop: false,
+        autoplay: true,
+        path: "animation_with_sound.json"
+    });
+});
+
 function init() {
     const games = "spil.json";
     const array = [];

@@ -63,6 +63,13 @@ p {
   height: 100vh;
 }
 
+.snif_container {
+  display: block;
+  position: relative;
+  right: 17vw;
+  top: 5vh;
+}
+
 .spil_container {
   display: flex;
   flex-wrap: wrap;
@@ -132,7 +139,8 @@ body {
   }
   .snif_container {
     display: flex;
-    width: 40%;
+    width: 75%;
+    right: 0vw;
   }
   .spil_container {
     width: 70%;
