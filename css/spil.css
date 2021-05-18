@@ -101,38 +101,57 @@ body {
   display: grid;
   grid-template-columns: 80%;
   justify-content: center;
-  height: 100vh;
-  align-items: center;
+  /* height: 100vh; */
 }
 
 .iframe_container {
   display: flex;
-  width: 100%;
-  height: 56%;
+  height: 250px;
 }
 
 .credits_container {
   display: flex;
   justify-content: center;
+}
+
+.fullscreen_container {
+  text-align: end;
   align-self: flex-start;
+  margin-top: 10px;
+}
+
+.fullscreen {
+  width: 70px;
 }
 
 /*******************************************media-queries*****************************************************/
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 751px) {
   .iframe_container {
     display: flex;
     width: 100%;
-    height: 80%;
+    height: 350px;
+  }
+  body {
+    background-image: linear-gradient(-25deg, var(--other-orange) 50%, var(--orange) 50%);
   }
 }
-@media screen and (min-width: 701px) {
+@media screen and (min-width: 1001px) {
   .iframe_container {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 450px;
+  }
+  body {
+    background-image: linear-gradient(-35deg, var(--other-orange) 50%, var(--orange) 50%);
   }
 }
 @media screen and (min-width: 1080px) {
+  body {
+    background-color: var(--orange);
+    background-image: url("../img/baggrund-1920.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .main_spil_container {
     display: flex;
     align-items: center;
@@ -159,30 +178,28 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 15px;
   }
-  iframe {
-    width: 100%;
-    height: 100%;
-  }
   .single_container {
     display: grid;
     grid-template-columns: 80%;
     justify-content: center;
-    grid-gap: 50px;
   }
   .iframe_container {
-    margin-top: 150px;
-    align-items: center;
-    height: 145%;
-  }
-  body {
-    background-color: var(--orange);
-    background-image: url("../img/baggrund-1920.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 550px;
   }
   .credits_container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+  }
+  .credits {
+    line-height: 0px;
+  }
+  .fullscreen_container {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 1319px) {
+  .iframe_container {
+    height: 650px;
   }
 }
