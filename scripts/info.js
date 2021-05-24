@@ -17,7 +17,8 @@ async function getAbout () {
     let aboutPod = await response.json();    
     document.querySelector("#about h1").textContent = aboutPod.overskrift;
     document.querySelector(".about_img_container img").src = aboutPod.billede.guid;
-    document.querySelector(".about_text_container h3").textContent = aboutPod.manchette;
+    document.querySelector(".about_img_container img").alt = aboutPod.billede.post_title;
+    document.querySelector("#about h2").textContent = aboutPod.manchette;
     document.querySelector(".about_text_container p").textContent = aboutPod.tekst;
     getSnif();
 }
@@ -26,10 +27,11 @@ async function getSnif() {
     const response = await fetch(endpoint + "om_snif/23");
     let snifPod = await response.json();    
     document.querySelector("#snif h1").textContent = snifPod.overskrift;
-    document.querySelector("#snif h3").textContent = snifPod.manchette;
+    document.querySelector(".snif_text_left h2").textContent = snifPod.manchette;
     document.querySelector(".snif_text_left p").textContent = snifPod.tekst_venstre;
     document.querySelector(".snif_text_right p").textContent = snifPod.tekst_hjre;
     document.querySelector(".snif_img_container img").src = snifPod.billede.guid;
+    document.querySelector(".snif_img_container img").alt = snifPod.billede.post_title;
     getProcess();
 }
 
@@ -57,6 +59,7 @@ function displaySteps(stepsPods) {
         let clone = stepTemplate.cloneNode(true).content;
         clone.querySelector(".step_number").textContent = step.nummer;
         clone.querySelector(".step_image_container img").src = step.billede.guid;
+        clone.querySelector(".step_image_container img").alt = step.billede.post_title;
         clone.querySelector(".step_text").textContent = step.tekst;
         if (step.venstre_eller_hjre === "0") {
             clone.querySelector("#step_container").classList.add("right");
@@ -71,7 +74,7 @@ async function getTestimonials() {
     const response = await fetch(endpoint + "kundeudtalelser/81");
     let testPod = await response.json();    
     document.querySelector("#kundeudtalelser h1").textContent = testPod.overskrift;
-    document.querySelector(".test_text_container h3").textContent = testPod.manchette;
+    document.querySelector(".test_text_container h2").textContent = testPod.manchette;
     getContact();
 }
 
@@ -79,8 +82,9 @@ async function getContact() {
     const response = await fetch(endpoint + "kontakt/100");
     let contactPod = await response.json();
     document.querySelector("#kontakt h1").textContent = contactPod.overskrift;
-    document.querySelector("#kontakt h3").textContent = contactPod.manchette;
+    document.querySelector("#kontakt h2").textContent = contactPod.manchette;
     document.querySelector(".contact_img_container img").src = contactPod.logo.guid;
+    document.querySelector(".contact_img_container img").alt = contactPod.logo.post_title;
     document.querySelector(".adress").textContent = contactPod.adresse;
     document.querySelector(".email").textContent = contactPod.mail;
     document.querySelector(".phone").textContent = contactPod.telefon;

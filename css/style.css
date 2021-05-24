@@ -34,6 +34,9 @@ h1 {
 .img_container {
   align-self: center;
 }
+.boern .img_container {
+  cursor: pointer;
+}
 
 .img_container img {
   width: 78%;

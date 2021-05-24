@@ -42,3 +42,16 @@
     opacity: 1;
   }
 }
+
+.fast_wiggle {
+  animation: fast_wiggle 1s both;
+  animation-iteration-count: infinite;
+  transform: rotate(3deg);
+  transform-origin: 50% 50%;
+}
+
+@keyframes fast_wiggle {
+  50% {
+    transform: rotate(-3deg);
+  }
+}

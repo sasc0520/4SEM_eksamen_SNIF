@@ -13,5 +13,11 @@ window.addEventListener("load", () => {
             document.querySelector("#container > div.img_container").classList.remove("float");
         });
     });
+    document.querySelector(".boern .img_container").addEventListener("click", () => {
+        window.location = "spil.html";
+    })
+    let animationTimer = setInterval(() => {
+        document.querySelector(".boern .img_container").classList.toggle("fast_wiggle");
+    }, 3100);
 });
 
