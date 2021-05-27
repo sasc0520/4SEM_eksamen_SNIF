@@ -35,7 +35,23 @@ function displayGames(array) {
         clone.querySelector(".thumbnail").addEventListener("click", () => {
             location.href = `single.html?id=${game.id}`;
           });
-
         contentHolder.appendChild(clone);
     });
+    setTimeout(() => {
+        randomizeThumbnails();
+    }, 3000); 
+}
+function randomizeThumbnails() {
+    let thumbnails = document.querySelectorAll(".thumbnail");
+    let randomThumbnail = Math.floor(Math.random() * thumbnails.length);
+    thumbnails[randomThumbnail].removeEventListener("animationend", randomizeThumbnails);
+    thumbnails[randomThumbnail].classList.remove("game_wiggle");
+    setTimeout(() => {
+        animateThumbnails(randomThumbnail, thumbnails);
+    }, 3000); 
+}
+
+function animateThumbnails(randomThumbnail, thumbnails) {
+    thumbnails[randomThumbnail].classList.add("game_wiggle");
+    thumbnails[randomThumbnail].addEventListener("animationend", randomizeThumbnails);
 }
