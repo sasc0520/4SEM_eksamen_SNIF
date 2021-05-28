@@ -7,10 +7,10 @@ header {
   position: fixed;
   width: 100%;
 }
-
+/* 
 .info_button {
   width: 100%;
-}
+} */
 
 h1 {
   letter-spacing: 0.15rem;
@@ -73,7 +73,6 @@ footer {
 #about_button {
   display: flex;
   justify-content: center;
-  margin: 50px 0px 50px 0px;
 }
 
 .nav_scrolled {
@@ -163,9 +162,7 @@ footer {
   height: 100vh;
   background-position: 50% 5%;
 }
-.info_button {
-  width: 375px;
-}
+
 section {
   padding: 50px 20px 50px 20px;
 }

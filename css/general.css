@@ -47,7 +47,7 @@ a {
 button {
   display: block;
   border: none;
-  padding: 20px 80px;
+  padding: 20px 60px 20px;
   border-radius: 10px;
   width: 100%;
   background-color: var(--green);

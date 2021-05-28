@@ -132,13 +132,13 @@
   .about_img_container {
     text-align: center;
     align-self: center;
-    flex-basis: 60%;
+    flex-basis: 50%;
     margin: 50px 0px 0px 0px;
   }
 
   .about_text_container {
     margin: 0px 50px 0px 50px;
-    flex-basis: 10%;
+    flex-basis: 30%;
     align-self: center;
   }
   .about_container {

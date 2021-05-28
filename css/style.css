@@ -52,12 +52,14 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    align-self: center;
   }
   #container {
     display: flex;
     width: 50%;
     height: 100vh;
     flex-wrap: nowrap;
+    justify-content: center;
   }
   .test {
     display: flex;
