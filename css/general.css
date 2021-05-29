@@ -13,10 +13,6 @@
   src: url("../fonts/typesketchbook_-_meltow-marker-webfont.woff2") format("woff2"), url("../fonts/typesketchbook_-_meltow-marker-webfont.woff") format("woff");
 }
 
-* {
-  box-sizing: border-box;
-}
-
 img {
   width: 100%;
 }

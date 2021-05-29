@@ -7,8 +7,9 @@
     <meta name="description" content="Energibesparelser i børnehøjde er en adfærdskampagne af Viegand Maagøe, der sammen med ræven Snif, lærer børn i institutionsalderen, hvordan man sparer energi.">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/info.css">
-    <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Læs om SNIF</title>
 </head>
 <body>
@@ -131,55 +132,30 @@
                 <h2></h2>
             </div>
             <div class="testimonial_carousel">
-                <div class="icon_container">
-                    <img src="img/knap_venstre.png" alt="venstre">
-                </div>
-                <div class="testimonial_items">
-                    <div class="testimonial_item first">
-                        <div class="quote_container">
-                            <p>Det her midlertidig tekst. Rigtige testimonials kommer senere.</p>
+                <div id="testimonial_container" class="owl-carousel owl-theme"></div>
+                <template class="testimonial_template">
+                    <article id="testimonial_item">
+                        <div class="testimonial">
+                            <p class="quote"></p>
                         </div>
-                        <div class="info_container">
-                            <div class="author_image_container">
-                                <img class="author" src="img/kampagne_logo.PNG">
+                        <div class="testimonial_info">
+                            <div class="details">
+                                <p class="title"></p>
+                                <p class="name"></p>
                             </div>
-                            <div class="info_text">
-                                <p class="title"><span>"En test"</span></p>
-                                <p class="name">Kommune</p>
-                            </div>
+                            <div class="author_img">
+                                <img class="author" src="" alt="kunde">
+                            </div>    
                         </div>
-                    </div>
-                    <div class="testimonial_item second">
-                        <div class="quote_container">
-                            <p>Det her midlertidig tekst. Rigtige testimonials kommer senere.</p>
-                        </div>
-                        <div class="info_container">
-                            <div class="author_image_container">
-                                <img class="author" src="img/kampagne_logo.PNG">
-                            </div>
-                            <div class="info_text">
-                                <p class="title"><span>"Endnu en test"</span></p>
-                                <p class="name">Kommune</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial_item third">
-                        <div class="quote_container">
-                            <p>Det her midlertidig tekst. Rigtige testimonials kommer senere.</p>
-                        </div>
-                        <div class="info_container">
-                            <div class="author_image_container">
-                                <img class="author" src="img/kampagne_logo.PNG">
-                            </div>
-                            <div class="info_text">
-                                <p class="title"><span>"Igen en test"</span></p>
-                                <p class="name">Kommune</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="icon_container">
-                    <img src="img/knap_hoejre.png" alt="hoejre">
+                    </article>
+                </template>
+            </div>
+            <div class="interested_container">
+                <h2>Interesseret?</h2>
+                <div id="steps_button" class="btn_container">
+                    <a href="#kontakt">
+                        <button class="info_button">Kontakt Os</button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -205,6 +181,7 @@
     </footer>
     <script src="scripts/info.js"></script>
     <script src="scripts/other.js"></script>
-    <script src="scripts/slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

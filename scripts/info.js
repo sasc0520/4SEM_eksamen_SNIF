@@ -72,10 +72,27 @@ function displaySteps(stepsPods) {
 
 async function getTestimonials() {
     const response = await fetch(endpoint + "kundeudtalelser/81");
-    let testPod = await response.json();    
+    let testPod = await response.json();
+    const testimonialsR = await fetch(endpoint + "udtalelse");
+    let testimonials = await testimonialsR.json();
     document.querySelector("#kundeudtalelser h1").textContent = testPod.overskrift;
     document.querySelector(".test_text_container h2").textContent = testPod.manchette;
+    let testimonialTemplate = document.querySelector(".testimonial_template");
+    let testimonialContainer = document.querySelector("#testimonial_container");
+    testimonialContainer.textContent = "";
+    testimonials.forEach(testimonial => {
+        let clone = testimonialTemplate.cloneNode(true).content;
+        clone.querySelector(".quote").textContent = '"' + testimonial.udtalelse + '"';
+        clone.querySelector(".author_img .author").src = testimonial.billede.guid;
+        if (testimonial.billede === false) {
+            clone.querySelector(".author_img .author").src = "img/anon.png";
+        }
+        clone.querySelector(".title").textContent = '"' + testimonial.titel + '"';
+        clone.querySelector(".name").textContent = testimonial.navn;
+        testimonialContainer.appendChild(clone);
+    });
     getContact();
+    makeCarousel();
 }
 
 async function getContact() {
@@ -88,4 +105,34 @@ async function getContact() {
     document.querySelector(".adress").textContent = contactPod.adresse;
     document.querySelector(".email").textContent = contactPod.mail;
     document.querySelector(".phone").textContent = contactPod.telefon;
+}
+
+function makeCarousel() {
+    const nextIcon = '<img src="img/knap_hoejre.png">';
+    const prevIcon = '<img src="img/knap_venstre.png">';
+     $('.owl-carousel').owlCarousel({
+        loop:true,
+        // autoplay: true,
+        margin:20,
+        navText: [
+            prevIcon,
+            nextIcon
+        ],
+        responsiveClass:true,
+        dots: false,
+        responsive:{
+            0:{
+                items:1,
+                nav:true,
+            },
+            600:{
+                items:2,
+                nav:true
+            },
+            1000:{
+                items:3,
+                nav:true,
+            }
+        }
+    })
 }

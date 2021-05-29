@@ -1,16 +1,14 @@
 body {
   padding: 0;
   margin: 0 auto;
+  box-sizing: unset;
 }
 
 header {
   position: fixed;
   width: 100%;
+  z-index: 1000;
 }
-/* 
-.info_button {
-  width: 100%;
-} */
 
 h1 {
   letter-spacing: 0.15rem;
@@ -31,7 +29,6 @@ nav a {
   text-decoration: none;
   color: var(--black);
   margin: 10px 10px;
-  font-size: 1.5rem;
 }
 
 nav a:hover {
@@ -179,7 +176,7 @@ section {
   justify-content: center;
 }
 .step_image_container {
-  flex-basis: 50%;
+  flex-basis: 100%;
 }
 
 .step_number {
@@ -192,8 +189,76 @@ section {
   flex-direction: none;
 }
 
+.testimonial_carousel {
+  max-width: 1200px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.testimonial {
+  background-color: #ffffff;
+  height: 300px;
+  width: 100%;
+  border-radius: 25px;
+  padding: 15px 0 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote {
+  padding: 25px;
+}
+
+.test_text_container {
+  margin-bottom: 50px;
+}
+
+.testimonial_info {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin: 20px 0px 0px 20px;
+}
+
+.testimonial_info .details {
+  margin-left: 20px;
+}
+
+.testimonial_info p {
+  line-height: 0.5rem;
+}
+
+.details {
+  justify-content: flex-end;
+  margin: 0;
+}
+.author_img {
+  justify-content: flex-end;
+  width: 70px;
+  margin: 0;
+}
+
 .contact_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
+}
+
+/************************** owl carousel ****************************/
+
+.owl-nav .owl-next:hover,
+.owl-nav .owl-prev:hover {
+  background: none !important;
+  opacity: 1;
+}
+.owl-nav .owl-next,
+.owl-nav .owl-prev {
+  width: 70px;
+  box-shadow: none;
+}
+
+.owl-stage {
+  margin: 0px 10px 25px 0px;
 }

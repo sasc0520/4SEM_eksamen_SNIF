@@ -1,3 +1,12 @@
+@media screen and (min-width: 800px) {
+  .owl-stage {
+    margin-left: 0px;
+  }
+  .testimonial {
+    height: 300px;
+  }
+}
+
 @media only screen and (min-width: 908px) {
   nav a {
     font-size: 1rem;
@@ -150,5 +159,22 @@
   #about h2 {
     margin: 25px 50px 0px 50px;
     padding: 0px 90px 0px 90px;
+  }
+  .testimonial {
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: 1480px) {
+  .owl-nav .owl-next {
+    position: absolute;
+    top: 20vh;
+    left: 78vw;
+  }
+
+  .owl-prev {
+    position: absolute;
+    top: 20vh;
+    right: 78vw;
   }
 }
