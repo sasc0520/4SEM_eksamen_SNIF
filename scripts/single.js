@@ -37,7 +37,6 @@ function displayGameMenu(array) {
         thumbNail1.addEventListener("click", () => {window.location = "single.html?id=2"});
         thumbNail2.addEventListener("click", () => {window.location = "single.html?id=3"});
     } else if (id === "2") {
-        console.log("it is two");
         thumbNail1.src = array[0].image;
         thumbNail2.src = array[2].image;   
         thumbNail1.addEventListener("click", () => {window.location = "single.html?id=1"});

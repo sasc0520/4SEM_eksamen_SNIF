@@ -36,10 +36,7 @@
     display: flex;
     flex-wrap: nowrap;
   }
-  .snif_text_left,
-  .snif_text_right {
-    padding: 0px 80px 80px;
-  }
+
   .desktop_nav {
     display: flex;
     padding: 20px;
@@ -74,27 +71,6 @@
   .step_text {
     margin: 50px;
   }
-}
-
-@media screen and (min-width: 1080px) {
-  .splash {
-    background-position: 0;
-  }
-  .about_img_container img {
-    width: 70%;
-  }
-  .about_text_container {
-    flex-basis: 40%;
-  }
-
-  .right {
-    display: flex;
-    flex-direction: row;
-  }
-  .left {
-    display: flex;
-    flex-direction: row-reverse;
-  }
   #forloebet .title,
   #forloebet .manchette {
     margin: 25px 50px 0px 50px;
@@ -120,7 +96,7 @@
     align-self: center;
   }
   #clone_container {
-    margin: 50px 180px 0px 180px;
+    margin: 50px 120px 0px 120px;
   }
   .left .step_number {
     text-align: start;
@@ -130,6 +106,26 @@
   }
   .step_text {
     margin: 0px;
+  }
+  .about_img_container img {
+    width: 70%;
+  }
+  .about_text_container {
+    flex-basis: 40%;
+  }
+
+  .snif_text_left,
+  .snif_text_right {
+    padding: 0px 30px 30px;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: row;
+  }
+  .left {
+    display: flex;
+    flex-direction: row-reverse;
   }
 
   #about_button {
@@ -144,7 +140,6 @@
     flex-basis: 50%;
     margin: 50px 0px 0px 0px;
   }
-
   .about_text_container {
     margin: 0px 50px 0px 50px;
     flex-basis: 30%;
@@ -160,8 +155,21 @@
     margin: 25px 50px 0px 50px;
     padding: 0px 90px 0px 90px;
   }
+}
+
+@media screen and (min-width: 1080px) {
+  .splash {
+    background-position: 0;
+  }
   .testimonial {
     height: 250px;
+  }
+  .snif_text_left,
+  .snif_text_right {
+    padding: 0px 80px 80px;
+  }
+  #clone_container {
+    margin: 50px 180px 0px 180px;
   }
 }
 

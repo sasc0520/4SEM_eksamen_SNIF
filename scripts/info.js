@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function getSplash() {
-    const response = await fetch(endpoint + "splash/29");
+    const response = await fetch(endpoint + "splash/47");
     let splash = await response.json();    
     let splashContainer = document.querySelector(".splash");
     splashContainer.style.backgroundImage = `url(${splash.splashbillede.guid})`;
@@ -13,7 +13,7 @@ async function getSplash() {
 }
 
 async function getAbout () {
-    const response = await fetch(endpoint + "om/35");
+    const response = await fetch(endpoint + "om/42");
     let aboutPod = await response.json();    
     document.querySelector("#about h1").textContent = aboutPod.overskrift;
     document.querySelector(".about_img_container img").src = aboutPod.billede.guid;
@@ -24,7 +24,7 @@ async function getAbout () {
 }
 
 async function getSnif() {
-    const response = await fetch(endpoint + "om_snif/23");
+    const response = await fetch(endpoint + "om_snif/45");
     let snifPod = await response.json();    
     document.querySelector("#snif h1").textContent = snifPod.overskrift;
     document.querySelector(".snif_text_left h2").textContent = snifPod.manchette;
@@ -36,7 +36,7 @@ async function getSnif() {
 }
 
 async function getProcess() {
-    const response = await fetch(endpoint + "forlbet/62");
+    const response = await fetch(endpoint + "om_forlbet/44");
     let procPod = await response.json();
     document.querySelector("#forloebet h1").textContent = procPod.overskrift;
     document.querySelector("#forloebet .manchette").textContent = procPod.manchette;
@@ -71,9 +71,9 @@ function displaySteps(stepsPods) {
 }
 
 async function getTestimonials() {
-    const response = await fetch(endpoint + "kundeudtalelser/81");
+    const response = await fetch(endpoint + "kundeudtalelser/49");
     let testPod = await response.json();
-    const testimonialsR = await fetch(endpoint + "udtalelse");
+    const testimonialsR = await fetch(endpoint + "testimonial");
     let testimonials = await testimonialsR.json();
     document.querySelector("#kundeudtalelser h1").textContent = testPod.overskrift;
     document.querySelector(".test_text_container h2").textContent = testPod.manchette;
@@ -96,7 +96,7 @@ async function getTestimonials() {
 }
 
 async function getContact() {
-    const response = await fetch(endpoint + "kontakt/100");
+    const response = await fetch(endpoint + "kontakt/72");
     let contactPod = await response.json();
     document.querySelector("#kontakt h1").textContent = contactPod.overskrift;
     document.querySelector("#kontakt h2").textContent = contactPod.manchette;
@@ -112,7 +112,7 @@ function makeCarousel() {
     const prevIcon = '<img src="img/knap_venstre.png">';
      $('.owl-carousel').owlCarousel({
         loop:true,
-        // autoplay: true,
+        autoplay: true,
         margin:20,
         navText: [
             prevIcon,
